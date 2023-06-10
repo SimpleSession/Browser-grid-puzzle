@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<div>
+			<h1>Hello world</h1>
+		</div>
+		
+		<div>Tab 1</div>
+		<div>Tab 2</div>
+	</header>
+	<main>
+		<h1>World</h1>
+		<div class="canvas-wrapper" id="wrapper">
+			<canvas id="screen"></canvas>
+		</div>
+		
+		<!-- Main game engine -->
+		<script src="core/variables.js"></script>
+		<script src="core/resize-canvas.js"></script>
+		<script src="core/game.js"></script>
+
+		<!-- Game code -->
+		<script src="enum.js"></script>
+		<script src="grid.js"></script>
+		<script src="sprite.js"></script>
+		<script src="main.js"></script>
+	</main>
+</body>
+</html>

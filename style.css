@@ -1,0 +1,63 @@
+:root {
+	--padding-side: 12.5%;
+}
+
+body {
+	margin: 0;
+}
+h1, h2 {
+	margin: 0;
+}
+
+/*
+* {
+	outline: 1px solid #000;
+}
+*/
+
+header {
+	padding: 0 var(--padding-side);
+
+	display: flex;
+	flex-direction: row;
+
+	background-color: #bbf;
+}
+
+header > div {
+	padding: 0.5em 1em;
+	background-color: #bbf;
+	
+}
+header > div:not(:first-child):hover {
+	background-color: #99f;
+}
+
+header > div:first-child {
+	padding-left: 0;
+}
+
+main {
+	padding: 0 var(--padding-side);
+}
+
+.canvas-wrapper {
+	background-color: teal;
+	width: 100%;
+	height: calc(60vh - 10vw);
+
+	overflow: hidden;
+	outline: 1px solid #000;
+}
+
+canvas {
+	background-color: white;
+
+	/* Disable anti-aliasing for images */
+	image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -o-crisp-edges;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
