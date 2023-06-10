@@ -1,8 +1,12 @@
 const groundGrid = new Grid(20, 11);
 
-let player;
+let player = new Entity('player');
+
 async function load() {
 	await loadImage('player.png');
+
+	Entity.loadSprites();
+	/*
 
 	player = {
 		movement: {
@@ -64,25 +68,47 @@ async function load() {
 			}	
 		}
 	}
+	*/
 }
 
 function keypressed(key) {
 	if (key == 'q') {
-		player.speed += 1
+		player.speed += 1;
+
 	} else if (key == 'e') {
-		player.speed -= 1
+		player.speed -= 1;
 	}
 }
 
 function update() {
-	player.onUpdate();
+	
+	if (!player.isMoving) {
+		for (let i = 0; i < controlsArray.length; i++) {
+			let keyname = controlsArray[i][0];
+
+			if (!KEY_ISDOWN[keyname]) {continue; }
+
+			let direction = controlsObject[keyname];
+			let [x2, y2] = [player.x + direction[0], player.y + direction[1]];
+
+			player.sprite.setImageId(i);
+			if (player.moveTo(x2, y2)) {
+				break;
+			}
+		}
+
+		if (player.step !== 0) {
+			return;
+		}
+	}
+
+	Entity.updateAll();
 }
 
 graphics.font = "24px monospace";
 function draw() {
 	groundGrid.draw();
-
-	player.sprite.draw(player.screen_x, player.screen_y);
+	Entity.drawAll();
 
 	//graphics.save();
 	//graphics.scale(2, 2);

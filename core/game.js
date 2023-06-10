@@ -50,7 +50,7 @@ GAME.start = async function() {
 			prevStamp = timestamp;
 		}
 
-		if (prevStamp + preferredFPS > timestamp) {return; }
+		if (prevStamp + FPSvalue > timestamp) {return; }
 
 		let delta = (timestamp - prevStamp) / 1000;
 		prevStamp = timestamp;

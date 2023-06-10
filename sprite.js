@@ -24,8 +24,6 @@ class Sprite {
 		this.x = (x_value % this.imageMaxWidth) * sheetTileSize;
 		this.y = Math.floor(x_value / this.imageMaxWidth) * sheetTileSize;
 		this.imageId = id;
-
-		print(this.x, this.y);
 	}
 
 	draw(x, y) {

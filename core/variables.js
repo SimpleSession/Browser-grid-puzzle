@@ -24,5 +24,7 @@ function loadImage(url) {
 	});
 }
 
-const preferredFPS = 30;
+const preferredFPS = 40;
+const FPSvalue = 1 / preferredFPS * 1000;
+
 let elapsedFPS;
